@@ -2,15 +2,23 @@
 %global WITH_SELINUX 1
 %endif
 
+%global gitrev          5a9ac
+%global tarballver      1.28
+
 Summary: A GNU file archiving program (git version)
 Name: tar-git-vanilla
-Version: 1.27.90
-Release: 2%{?dist}
+
+# Note that there is no really sane way to version this pre-release packages,
+# because we don't know the next version.
+Version: 1.28.0.1
+Release: 1git%{gitrev}%{?dist}
 License: GPLv3+
 Group: Applications/Archiving
 URL: http://www.gnu.org/software/tar/
 
-Source: tar-%{version}.tar.gz
+Source: tar-%{tarballver}.tar.gz
+
+Patch0: 0001-testsuite-sort-otherwise-random-expected-output.patch
 
 # run "make check" by default
 %bcond_without check
@@ -44,7 +52,8 @@ If you want to use tar for remote backups, you also need to install
 the rmt package on the remote box.
 
 %prep
-%setup -q -n tar-%{version}
+%setup -q -n tar-%{tarballver}
+%patch0 -p1
 
 %build
 %if ! %{WITH_SELINUX}
@@ -101,6 +110,9 @@ fi
 %{_infodir}/%name.info*
 
 %changelog
+* Thu Dec 18 2014 Pavel Raiskup <praiskup@redhat.com> - 1.28.0.1-1git5a9ac
+- latest HEAD rebase
+
 * Wed Jul 16 2014 Pavel Raiskup <praiskup@redhat.com> - 1.27.90-2
 - bump release and remove patch (causing non-vanilla-ness)
 
