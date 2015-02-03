@@ -6,4 +6,3 @@ pushd tar && \
 ./bootstrap && \
 ./configure && \
 make dist
-
