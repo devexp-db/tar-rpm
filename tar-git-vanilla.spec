@@ -4,7 +4,7 @@
 %global WITH_SELINUX 1
 %endif
 
-%global gitrev          d02c81
+%global gitrev          239441
 
 Summary: A GNU file archiving program (git version)
 Name: tar-git-vanilla
@@ -108,8 +108,8 @@ fi
 %{_infodir}/%name.info*
 
 %changelog
-* Sat Dec 05 2015 Pavel Raiskup <praiskup@redhat.com> - 1.28.90-2gitd02c81
-- latest git HEAD
+* Mon Dec 07 2015 Pavel Raiskup <praiskup@redhat.com> - 1.28.90-2git239441
+- latest HEAD rebase
 
 * Fri Nov 27 2015 Pavel Raiskup <praiskup@redhat.com> - 1.28.90-1gite42678
 - rebase to latest HEAD
