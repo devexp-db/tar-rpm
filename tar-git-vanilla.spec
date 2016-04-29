@@ -4,7 +4,7 @@
 %global WITH_SELINUX 1
 %endif
 
-%global gitrev          445293
+%global gitrev          61cd3f
 
 Summary: A GNU file archiving program (git version)
 Name: tar-git-vanilla
@@ -12,7 +12,7 @@ Name: tar-git-vanilla
 # Note that there is no really sane way to version this pre-release packages,
 # because we don't know the next version.
 Version: 1.28.90
-Release: 4git%{gitrev}%{?dist}
+Release: 5git%{gitrev}%{?dist}
 License: GPLv3+
 Group: Applications/Archiving
 URL: http://www.gnu.org/software/tar/
@@ -108,6 +108,9 @@ fi
 %{_infodir}/%name.info*
 
 %changelog
+* Fri Apr 29 2016 Pavel Raiskup <praiskup@redhat.com> - 1.28.90-5git61cd3f
+- latest HEAD rebase
+
 * Sat Dec 26 2015 Pavel Raiskup <praiskup@redhat.com> - 1.28.90-4git445293
 - latest HEAD rebase
 
